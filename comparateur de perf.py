@@ -27,8 +27,27 @@ def tri_select(lst):
 
 d = perf_counter()
 x = tri_select(lst)
-print("temps tri_select", round((perf_counter()-d),2),"s")
+##print("temps tri_select", round((perf_counter()-d),2),"s")
 
 d = perf_counter()
 x = tri_select2(lst)
-print("temps tri_select2", round((perf_counter()-d),2),"s")
+##print("temps tri_se2", round((perf_counter()-d),2),"s")
+
+
+def tri_insert(lst):
+    """ Tri par insertion, mettre la liste en paramètre"""
+    for i in range(1, len(lst)):
+        while i > 0 and lst[i] < lst[i-1]:
+            lst[i], lst[i-1] = lst[i-1], lst[i]
+            i = i - 1
+    return lst
+
+tps_insert = []
+for i in (10, 100, 1000, 10000):
+    lst = [randint(1, i) for j in range(i)]
+    d = perf_counter()
+    tri_insert(lst)
+    tps_insert.append((i, round((perf_counter()-d)*10**6, 0)))
+print(tps_insert)
+
+
