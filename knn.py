@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from math import *
 
 
-iris = pandas.read_csv("iris_test.csv")
+iris = pandas.read_csv("iris.csv")
 x = iris.loc[:,"longueur_petale"]
 y = iris.loc[:,"largeur_petale"]
 lab = iris.loc[:,"espece"]
@@ -29,7 +29,6 @@ def dist2(dist):
 
 
 dist = dist2(dist_euclid(echan, liste))
-print(dist)
 k = 5
 
 
@@ -43,7 +42,6 @@ def KNN(dist, k):
             voisins[1][1] += 1
         elif dist[i][1] == 2:
             voisins[2][1] += 1
-    print(voisins)
     maxi = 0
     for i in range(len(voisins)):
         if voisins[i][1] >= maxi:
