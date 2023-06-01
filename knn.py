@@ -52,10 +52,10 @@ def KNN(dist, k):
         print('L espèce de la fleur est une setosa')
     elif echan[2] == 1:
         couleur = 'r'
-        print('L espèce de la fleur est une versicolor')
+        print('L espèce de la fleur est une verginica')
     elif echan[2] == 2:
         couleur = 'b'
-        print('L espèce de la fleur est une verginica')
+        print('L espèce de la fleur est une versicolor')
     return couleur
 
 
